@@ -1,0 +1,65 @@
+nav.smaller {
+  height: 60px;
+  box-shadow: 0 7px 7px -7px #333;
+}
+
+nav.disappear {
+  height: 0;
+}
+
+nav.smaller img.header__logo {
+  width: 6em;
+  height: 2.5em;
+}
+
+.header {
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  background-color: beige;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Open Sans", sans-serif;
+  height: 110px;
+  transition: height 0.35s;
+}
+
+.header__logo {
+  width: 155px;
+  object-fit: contain;
+  margin-left: 20px;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.header__nav {
+  display: flex;
+  margin-right: 20px;
+}
+
+.header__option {
+  color: black;
+  text-decoration: none;
+  display: inline-block;
+  list-style-type: none;
+  padding: 10px 25px;
+  font-weight: 600;
+  font-size: 1.1em;
+  -webkit-transition: 0.07s 0.07s;
+  transition: 0.07s 0.07s;
+
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.header__option:hover {
+  color: #82ca9c;
+  text-decoration: underline;
+}
