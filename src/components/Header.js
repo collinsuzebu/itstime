@@ -12,7 +12,7 @@ class Header extends React.Component {
   resizeHeaderOnScroll() {
     const distanceY = window.pageYOffset || document.documentElement.scrollTop,
       shrinkOn = 50,
-      removeOn = 60,
+      removeOn = 65,
       headerElement = document.getElementById("header");
 
     if (distanceY > shrinkOn) {
@@ -37,23 +37,23 @@ class Header extends React.Component {
           </Link>
 
           <div className="header__nav">
-            <Link className="header__option">
+            <Link to="/courses" className="header__option">
               <span>COURSES</span>
             </Link>
 
-            <Link className="header__option">
+            <Link to="/knowledge-hub" className="header__option">
               <span>KNOWLEDGE HUB</span>
             </Link>
 
-            <Link className="header__option">
+            <Link to="/about" className="header__option">
               <span>ABOUT</span>
             </Link>
 
-            <Link className="header__option">
+            <Link to="/blog" className="header__option">
               <span>BLOG</span>
             </Link>
 
-            <Link className="header__option">
+            <Link to="/login" className="header__option">
               <span>LOG IN</span>
             </Link>
           </div>

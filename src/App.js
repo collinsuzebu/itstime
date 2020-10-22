@@ -3,6 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 import Body from "./components/Body";
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
             <Header />
             HOME PAGE
             <Body />
+            <Footer />
           </Route>
 
           <Route path="courses"></Route>
