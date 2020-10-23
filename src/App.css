@@ -7,7 +7,52 @@
 
 a {
   transition: color 0.3s;
+  text-decoration: none;
   background-color: transparent;
+}
+
+a:focus {
+  color: #7cb342;
+}
+
+/*  ----> Buttons */
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  text-transform: capitalize !important;
+}
+
+input,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+}
+
+button {
+  overflow: visible;
+}
+
+button,
+input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  border: 0;
 }
 
 ul {

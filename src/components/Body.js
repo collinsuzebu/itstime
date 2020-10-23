@@ -2,7 +2,7 @@ import React from "react";
 
 function Body() {
   return (
-    <div style={{ fontSize: "100px" }}>
+    <div style={{ fontSize: "50px" }}>
       {`Former VP with 10+ years of experience in test preparation 
       and e-learning, who scored in the 90th+ percentile of psychometric tests.
     FAST-PACED Courses that fit your job seeker lifestyle - 
