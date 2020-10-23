@@ -164,3 +164,7 @@ sketch
 
 ### logo
 *.png
+
+# mock data
+mockapi/
+api/

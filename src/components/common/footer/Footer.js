@@ -70,11 +70,11 @@ function Footer() {
             </div>
             <div className="column col-md-3 footer-4">
               <div className="widgets">
-                <div class="widget_text widget widget_custom_html">
-                  <div class="textwidget custom-html-widget">
-                    <div class="ssl">
-                      <i class="fa fa-lock"></i>{" "}
-                      <span class="ssl-text">Secured Payment</span>
+                <div className="widget_text widget widget_custom_html">
+                  <div className="textwidget custom-html-widget">
+                    <div className="ssl">
+                      <i className="fa fa-lock"></i>{" "}
+                      <span className="ssl-text">Secure Payment</span>
                     </div>
                   </div>
                 </div>
