@@ -26,11 +26,9 @@ describe("Async Actions", () => {
       ];
 
       const store = mockStore({ courses: [] });
-      return store.dispatch(
-        courseActions.loadCourseSuccess().then(() => {
-          expect(store.getActions()).toEqual(expectedActions);
-        })
-      );
+      return store.dispatch(courseActions.loadCourses()).then(() => {
+        expect(store.getActions()).toEqual(expectedActions);
+      });
     });
   });
 });
