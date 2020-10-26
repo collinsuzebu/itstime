@@ -46,11 +46,6 @@
     ],
     "coverageReporters": [
       "text"
-    ],
-    "moduleFileExtensions": [
-      "js",
-      "jsx",
-      "png"
     ]
   },
   "eslintConfig": {
