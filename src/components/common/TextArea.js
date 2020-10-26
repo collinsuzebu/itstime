@@ -30,7 +30,7 @@ const TextAreaInput = ({
           value={value}
           onChange={onChange}
         ></textarea>
-        {error && <div className="alert alert-danger">{error}</div>}
+        {error && <div className="alert text-white-50 bg-dark">{error}</div>}
       </div>
     </div>
   );

@@ -162,7 +162,7 @@ sketch
 
 
 ### logo
-*.png
+# *.png
 
 # mock data
 mockapi/

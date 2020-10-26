@@ -29,7 +29,7 @@ const TextInput = ({
           value={value}
           onChange={onChange}
         />
-        {error && <div className="alert alert-danger">{error}</div>}
+        {error && <div className="alert text-white-50 bg-dark">{error}</div>}
       </div>
     </div>
   );

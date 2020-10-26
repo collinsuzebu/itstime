@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import Footer from "./common/footer/Footer";
 import NavBar from "./common/nav/NavBar";
 import "./PageNotFound.css";
-import error404 from "../images/error404.png";
 
 function PageNotFound() {
   return (
@@ -14,7 +13,7 @@ function PageNotFound() {
           <div className="error404__center">
             <img
               className="error404__image"
-              src={error404}
+              src={process.env.PUBLIC_URL + "/images/error404.png"}
               alt="page not found"
             />
             <h1 className="error404__title">

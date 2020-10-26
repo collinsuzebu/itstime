@@ -1,5 +1,4 @@
 import React from "react";
-import underconstruction from "../images/under-construction.jpg";
 
 function Body() {
   return (
@@ -8,7 +7,7 @@ function Body() {
         width: "100%",
         zIndex: 0,
       }}
-      src={underconstruction}
+      src={process.env.PUBLIC_URL + "/images/under-construction.jpg"}
       alt="website under construction"
     />
   );

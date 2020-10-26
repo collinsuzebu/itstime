@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Burger from "./Burger";
 import { Link } from "react-router-dom";
-import logo from "../../../images/logo.png";
 
 const Nav = styled.nav`
   width: 100%;
@@ -29,6 +28,7 @@ const Nav = styled.nav`
 
   .header__logo img {
     width: 155px;
+    height="50";
     object-fit: contain;
     transition: all 0.3s;
   }
@@ -45,7 +45,10 @@ const NavBar = () => {
       <div className="header">
         <div className="header__logo">
           <Link to="/">
-            <img height="50" src={logo} alt="Its time logo" />
+            <img
+              src={process.env.PUBLIC_URL + "/images/logo.png"}
+              alt="Its time logo"
+            />
           </Link>
         </div>
 

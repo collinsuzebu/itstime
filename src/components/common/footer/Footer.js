@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../../../images/logo-white.png";
 import "./Footer.css";
 
 function Footer() {
@@ -12,7 +11,10 @@ function Footer() {
               <div className="widgets">
                 <div className="widget widget__contact-info">
                   <div className="footer__logo">
-                    <img src={logo} alt="itstime logo" />
+                    <img
+                      src={process.env.PUBLIC_URL + "/images/logo-white.png"}
+                      alt="itstime logo"
+                    />
                   </div>
                   <p className="intro">
                     At vero eos et accusamus et iusto odio dignissimos ducimus
