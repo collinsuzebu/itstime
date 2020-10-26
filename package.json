@@ -28,7 +28,6 @@
   "scripts": {
     "start": "run-p start:dev start:mockapi",
     "start:dev": "react-scripts start",
-    "prebuild": "run-p test:ci",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:ci": "react-scripts test",
