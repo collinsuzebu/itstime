@@ -1,0 +1,72 @@
+:root {
+  --black: #333;
+  --white: #f7f7f7;
+}
+
+div.cardform {
+  margin-left: auto;
+  margin-right: auto;
+}
+.cardform {
+  width: 55%;
+  margin: 20px;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 27px 55px 0 rgba(0, 0, 0, 0.3),
+    0 17px 17px 0 rgba(0, 0, 0, 0.15);
+}
+.cardform .cardform__title {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--white);
+  background: var(--black);
+  border-radius: 5px 5px 0 0;
+}
+.cardform .cardform__body {
+  padding: 50px;
+}
+
+.cardform .cardform__body .cardform__row {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.cardform .cardform__rule {
+  height: 1.5px;
+  background: var(--white);
+  margin: 10px 65px;
+}
+
+.cardform .cardform__footer {
+  margin: 0 25px 15px 25px;
+  padding: 15px 10px;
+  display: flex;
+  justify-content: center;
+}
+.cardform .cardform__footer button {
+  color: var(--white);
+  display: inline-block;
+  line-height: 28px;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 15px;
+  background: var(--black);
+  margin-right: 10px;
+  font-size: 18px;
+  width: 35%;
+}
+
+.cardform__footer button:hover {
+  background: #111;
+}
+
+.cardform__footer button:disabled {
+  background: #111;
+  cursor: not-allowed !important;
+}
