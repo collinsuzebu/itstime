@@ -1,7 +1,3 @@
-os: linux
-
-dist: debian
-
 notifications:
   email: false
 
