@@ -47,14 +47,10 @@
     "coverageReporters": [
       "text"
     ],
-    "roots": [
-      "<rootDir>"
-    ],
-    "modulePaths": [
-      "<rootDir>"
-    ],
-    "moduleDirectories": [
-      "node_modules"
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "png"
     ]
   },
   "eslintConfig": {
