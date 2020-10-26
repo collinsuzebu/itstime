@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../../logo.png";
+import logo from "../../../images/logo-white.png";
 import "./Footer.css";
 
 function Footer() {
@@ -74,7 +74,9 @@ function Footer() {
                   <div className="textwidget custom-html-widget">
                     <div className="ssl">
                       <i className="fa fa-lock"></i>{" "}
-                      <span className="ssl-text">Secure Payment</span>
+                      <span className="ssl-text">
+                        <b>Secure </b>Payment
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -87,7 +89,10 @@ function Footer() {
         <div className="container">
           <div className="col-md-6">
             <div className="site-info">
-              Copyright © 2020. All Rights Reserved to ITstime.{" "}
+              Copyright © 2020. All Rights Reserved to{" "}
+              <a href="https://github.com/collinsuzebu">
+                <b>itstime</b>
+              </a>{" "}
             </div>
           </div>
         </div>

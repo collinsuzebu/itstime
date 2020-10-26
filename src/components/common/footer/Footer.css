@@ -145,6 +145,11 @@ footer {
   margin-bottom: 27px;
 }
 
+.footer__logo img {
+  width: 155px;
+  object-fit: contain;
+}
+
 /* Site info */
 .site-info {
   margin-left: -15px;

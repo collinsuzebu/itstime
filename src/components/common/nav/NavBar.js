@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Burger from "./Burger";
 import { Link } from "react-router-dom";
-import logo from "../../../logo.png";
+import logo from "../../../images/logo.png";
 
 const Nav = styled.nav`
   width: 100%;
@@ -27,7 +27,7 @@ const Nav = styled.nav`
     margin: 0 70px;
   }
 
-  .header__logo {
+  .header__logo img {
     width: 155px;
     object-fit: contain;
     transition: all 0.3s;
@@ -39,13 +39,13 @@ const Nav = styled.nav`
   }
 `;
 
-const Navbar = () => {
+const NavBar = () => {
   return (
     <Nav>
       <div className="header">
         <div className="header__logo">
           <Link to="/">
-            <img width="157" height="50" src={logo} alt="Its time logo" />
+            <img height="50" src={logo} alt="Its time logo" />
           </Link>
         </div>
 
@@ -57,4 +57,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;
