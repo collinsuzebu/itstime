@@ -1,0 +1,19 @@
+.error404 {
+  padding: 120px 0;
+}
+
+.error404__center {
+  text-align: center;
+}
+
+.error404 .error404__title {
+  padding-top: 35px;
+  font-size: 24px;
+  color: #212121;
+  font-family: "roboto";
+  font-weight: 400;
+}
+
+img.error404__image {
+  max-width: 50%;
+}

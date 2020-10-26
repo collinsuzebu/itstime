@@ -1,11 +1,32 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Footer from "./common/footer/Footer";
+import NavBar from "./common/nav/NavBar";
+import "./PageNotFound.css";
+import error404 from "../images/error404.png";
 
 function PageNotFound() {
   return (
-    <div>
-      <h1>404</h1>
-      <h2>error: Page not found</h2>
-    </div>
+    <>
+      <NavBar />
+      <main className="container">
+        <section className="error404">
+          <div className="error404__center">
+            <img
+              className="error404__image"
+              src={error404}
+              alt="page not found"
+            />
+            <h1 className="error404__title">
+              Sorry, we can't find the page you are looking for. Please go to{" "}
+              {""}
+              <Link to="/">home</Link>
+            </h1>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
   );
 }
 
