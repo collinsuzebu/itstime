@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "./components/home/HomePage";
 import Courses from "./components/courses/Courses";
 import PageNotFound from "./components/PageNotFound";
+import CourseManagement from "./components/courses/CourseManagement"; // eslint-disable-line import/no-named-as-default
 
 const App = () => {
   return (
@@ -17,13 +18,17 @@ const App = () => {
 
           <Route path="/courses" component={Courses} />
 
-          <Route path="/knowledge-hub"></Route>
+          <Route path="/course/:slug" component={CourseManagement} />
 
-          <Route path="/about"></Route>
+          <Route path="/course" component={CourseManagement} />
 
-          <Route path="/blog"></Route>
+          <Route path="/knowledge-hub" component={PageNotFound}></Route>
 
-          <Route path="/login"></Route>
+          <Route path="/about" component={PageNotFound}></Route>
+
+          <Route path="/blog" component={PageNotFound}></Route>
+
+          <Route path="/login" component={PageNotFound}></Route>
 
           <Route component={PageNotFound}></Route>
 

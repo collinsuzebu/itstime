@@ -9,9 +9,14 @@ a {
   transition: color 0.3s;
   text-decoration: none;
   background-color: transparent;
+  color: #7cb342;
 }
 
 a:focus {
+  color: #7cb342;
+}
+
+a:hover {
   color: #7cb342;
 }
 
@@ -57,4 +62,41 @@ input[type="submit"] {
 
 ul {
   list-style: none;
+}
+
+.custombutton {
+  background-color: #7cb342;
+  color: #fff;
+  border: none;
+  padding: 15px;
+  font-family: "roboto";
+  font-size: 14px;
+  font-weight: 500;
+  width: 210px;
+  margin: 10px 0;
+  outline: none !important;
+}
+
+.custombutton:hover {
+  font-weight: 600;
+}
+
+.page__banner-top {
+  padding: 83px 0 40px 25px;
+  color: #fff;
+  background-color: #4b6c28;
+  background-size: cover;
+  background-position: center center;
+  text-align: left;
+}
+
+.page__title {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 38px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 700;
+  /* color: #fff; */
+  margin: 0;
+  margin-top: 10px;
 }

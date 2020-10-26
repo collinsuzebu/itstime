@@ -1,17 +1,25 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { Redirect } from "react-router-dom";
+
 import NavBar from "../common/nav/NavBar";
 import Footer from "../common/footer/Footer";
 import * as courseActions from "../../redux/actions/courseActions";
 import * as authorActions from "../../redux/actions/authorActions";
+import * as subjectActions from "../../redux/actions/subjectActions";
 import CourseList from "./CourseList";
-
-import { bindActionCreators } from "redux";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
+import Spinner from "../common/Spinner";
+import MSnackbar from "../common/MSnackbar";
 
 class Courses extends Component {
+  state = {
+    redirectToAddCoursePage: false,
+    snackbar: false,
+  };
   componentDidMount() {
-    const { courses, authors, actions } = this.props;
+    const { courses, subjects, actions } = this.props;
 
     if (courses.length === 0) {
       actions.loadCourses().catch((error) => {
@@ -19,42 +27,59 @@ class Courses extends Component {
       });
     }
 
-    if (authors.length === 0) {
-      actions.loadAuthors().catch((error) => {
-        console.log("Failed to load authors " + String(error));
+    if (subjects.length === 0) {
+      actions.loadSubjects().catch((error) => {
+        console.log("Failed to load subjects " + String(error));
       });
     }
   }
-  // state = {
-  //   course: {
-  //     title: "",
-  //   },
-  // };
 
-  // handleChange = (e) => {
-  //   let course = { ...this.state.course, title: e.target.value };
-  //   this.setState({ course });
-  // };
+  handleDeleteCourse = async (course) => {
+    try {
+      this.setState({ snackbar: true });
+      await this.props.actions.deleteCourse(course);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  // handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   this.props.actions.createCourse(this.state.course);
-  // };
+  closeSnackbar = () => {
+    this.setState({ snackbar: false });
+  };
+
   render() {
     return (
       <>
+        {this.state.redirectToAddCoursePage && <Redirect to="/course" />}
         <NavBar />
-        {/* <form onSubmit={this.handleSubmit}> */}
-        <h2>Courses</h2>
-        {/* <h3>Add Course</h3>
-          <input
-            type="text"
-            onChange={this.handleChange}
-            value={this.state.course.title}
-          />
-          <input type="submit" value="Save" />
-        </form> */}
-        <CourseList courses={this.props.courses} />
+        <h1 style={{ textAlign: "right" }} className="container page__title">
+          Available Courses
+        </h1>
+        {this.props.loading ? (
+          <Spinner />
+        ) : (
+          <>
+            <div className="container">
+              <button
+                className="custombutton"
+                onClick={() => this.setState({ redirectToAddCoursePage: true })}
+              >
+                {" "}
+                ADD A COURSE
+              </button>
+
+              <CourseList
+                onDeleteClick={this.handleDeleteCourse}
+                courses={this.props.courses}
+              />
+            </div>
+            <MSnackbar
+              open={this.state.snackbar}
+              close={this.closeSnackbar}
+              message={"Deleted Successfully"}
+            />
+          </>
+        )}
         <Footer />
       </>
     );
@@ -64,22 +89,26 @@ class Courses extends Component {
 Courses.propTypes = {
   actions: PropTypes.object.isRequired,
   courses: PropTypes.array.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 const mapStateToProps = (state, ownProps) => {
+  // console.log("redux state", state.courses[0].subjectId);
+  // console.log(state.subjects.find((a) => a.id === 1));
   return {
     courses:
-      state.authors.length === 0
+      state.subjects.length === 0
         ? []
         : state.courses.map((course) => {
             return {
               ...course,
 
-              authorName: state.authors.find((a) => a.id === course.authorId)
-                .name,
+              subjectName: state.subjects.find((a) => a.id === course.subjectId)
+                .title,
             };
           }),
-    authors: state.authors,
+    subjects: state.subjects,
+    loading: state.apiCallsInProgress > 0,
   };
 };
 const mapDispatchToProps = (dispatch) => {
@@ -87,6 +116,8 @@ const mapDispatchToProps = (dispatch) => {
     actions: {
       loadCourses: bindActionCreators(courseActions.loadCourses, dispatch),
       loadAuthors: bindActionCreators(authorActions.loadAuthors, dispatch),
+      loadSubjects: bindActionCreators(subjectActions.loadSubjects, dispatch),
+      deleteCourse: bindActionCreators(courseActions.deleteCourse, dispatch),
     },
   };
 };

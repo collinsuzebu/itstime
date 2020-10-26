@@ -168,3 +168,10 @@ sketch
 # mock data
 mockapi/
 api/
+
+
+# snapshots files
+snapshots/
+
+# tests (keep test hidden during dev)
+tests
