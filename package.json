@@ -46,6 +46,15 @@
     ],
     "coverageReporters": [
       "text"
+    ],
+    "roots": [
+      "<rootDir>"
+    ],
+    "modulePaths": [
+      "<rootDir>"
+    ],
+    "moduleDirectories": [
+      "node_modules"
     ]
   },
   "eslintConfig": {
