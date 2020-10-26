@@ -172,4 +172,3 @@ mockapi/
 snapshots/
 
 # tests (keep test hidden during dev)
-tests
