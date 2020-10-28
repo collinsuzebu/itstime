@@ -6,6 +6,8 @@ import HomePage from "./components/home/HomePage";
 import Courses from "./components/courses/Courses";
 import PageNotFound from "./components/PageNotFound";
 import CourseManagement from "./components/courses/CourseManagement"; // eslint-disable-line import/no-named-as-default
+import SignUpPage from "./components/login/SignUpPage";
+import LoginPage from "./components/login/LoginPage";
 
 const App = () => {
   return (
@@ -28,7 +30,9 @@ const App = () => {
 
           <Route path="/blog" component={PageNotFound}></Route>
 
-          <Route path="/login" component={PageNotFound}></Route>
+          <Route path="/register" component={SignUpPage}></Route>
+
+          <Route path="/login" component={LoginPage}></Route>
 
           <Route component={PageNotFound}></Route>
 

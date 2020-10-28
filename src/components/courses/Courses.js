@@ -93,8 +93,6 @@ Courses.propTypes = {
 };
 
 const mapStateToProps = (state, ownProps) => {
-  // console.log("redux state", state.courses[0].subjectId);
-  // console.log(state.subjects.find((a) => a.id === 1));
   return {
     courses:
       state.subjects.length === 0

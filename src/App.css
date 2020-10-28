@@ -5,6 +5,12 @@
 
 /* General Rules */
 
+h1,
+h2 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
 a {
   transition: color 0.3s;
   text-decoration: none;
@@ -26,6 +32,10 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   text-transform: capitalize !important;
+}
+
+input[type="password"] {
+  border: 1px solid #ccc;
 }
 
 input,
