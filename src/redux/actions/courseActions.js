@@ -1,5 +1,5 @@
 import * as types from "./actionTypes";
-import * as courseApi from "../../api/courseApi";
+import * as courseApi from "../../api/course.service";
 import { startedApiCall, apiCallFailed } from "./apiStatusActions";
 
 // Action creator

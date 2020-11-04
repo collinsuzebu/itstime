@@ -1,5 +1,5 @@
 import * as types from "./actionTypes";
-import * as authorApi from "../../api/authorApi";
+import * as authorApi from "../../api/author.service";
 import { startedApiCall, apiCallFailed } from "./apiStatusActions";
 
 export function loadAuthorSuccess(authors) {

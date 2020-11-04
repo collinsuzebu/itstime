@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
-import { CourseManagement } from "../components/courses/CourseManagement";
-import { subjects, courses, newCourse } from "./testDataMock";
+import { CourseManagement } from "./CourseManagement";
+import { subjects, courses, newCourse } from "../../tests/testDataMock";
 import { BrowserRouter as Router } from "react-router-dom";
 
 function renderCourseManagement(args) {

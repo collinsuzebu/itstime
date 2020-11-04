@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import NavBar from "../common/nav/NavBar";
 import Footer from "../common/footer/Footer";
-import * as courseActions from "../../redux/actions/courseActions";
+import * as courseActions from "../../redux/actions/course";
 import * as authorActions from "../../redux/actions/authorActions";
 import * as subjectActions from "../../redux/actions/subjectActions";
 import CourseForm from "./CourseForm";

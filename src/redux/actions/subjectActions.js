@@ -1,5 +1,5 @@
 import * as types from "./actionTypes";
-import * as subjectApi from "../../api/subjectApi";
+import * as subjectApi from "../../api/subject.service";
 import { startedApiCall, apiCallFailed } from "./apiStatusActions";
 
 export function loadSubjectSuccess(subjects) {

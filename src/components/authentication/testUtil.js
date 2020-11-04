@@ -1,7 +1,7 @@
 import React from "react";
 import { render as rtlRender, RenderOptions } from "@testing-library/react";
 import { Provider } from "react-redux";
-import reducer from "../../../redux/reducers/auth";
+import reducer from "../../redux/reducers/auth";
 import { Router, Route } from "react-router-dom";
 import { createStore } from "redux";
 import { createMemoryHistory } from "history";
