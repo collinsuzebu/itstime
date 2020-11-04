@@ -1,27 +1,32 @@
 import {
+  CREATE_COURSE_SUCCESS,
   LOAD_COURSES_SUCCESS,
   LOAD_COURSES_FAIL,
+  UPDATE_COURSE_SUCCESS,
+  DELETE_COURSE_OPTIMISTIC,
   SET_MESSAGE,
   API_CALL_STARTED,
   API_CALL_FAILED,
 } from "./actionTypes";
 
 import CourseService from "../../api/course.service";
+import { apiCallFailed, startedApiCall } from "./apiStatusActions";
 
 export const loadCourses = () => (dispatch) => {
   dispatch({
     type: API_CALL_STARTED,
   });
+
   return CourseService.getCourses().then(
     (response) => {
       dispatch({
         type: LOAD_COURSES_SUCCESS,
-        payload: { courses: response.data },
+        courses: response.data,
       });
 
       dispatch({
         type: SET_MESSAGE,
-        payload: response.data.message,
+        message: response.data.message,
       });
 
       return Promise.resolve();
@@ -50,3 +55,48 @@ export const loadCourses = () => (dispatch) => {
     }
   );
 };
+
+// Action creator
+export function loadCourseSuccess(courses) {
+  return { type: LOAD_COURSES_SUCCESS, courses };
+}
+
+// Action creator
+export function createCourseSuccess(course) {
+  return { type: CREATE_COURSE_SUCCESS, course };
+}
+
+// Action creator
+export function updateCourseSuccess(course) {
+  return { type: UPDATE_COURSE_SUCCESS, course };
+}
+
+// Action creator
+export function deleteCourseOptimistic(course) {
+  return { type: DELETE_COURSE_OPTIMISTIC, course };
+}
+
+// Thunks middleware
+export function saveCourse(course) {
+  return function (dispatch) {
+    dispatch(startedApiCall());
+    return CourseService.saveCourse(course)
+      .then((savedCourse) => {
+        course.id
+          ? dispatch(updateCourseSuccess(savedCourse))
+          : dispatch(createCourseSuccess(savedCourse));
+      })
+      .catch((error) => {
+        dispatch(apiCallFailed());
+        throw error;
+      });
+  };
+}
+
+// Thunk Middleware
+export function deleteCourse(course) {
+  return function (dispatch) {
+    dispatch(deleteCourseOptimistic(course));
+    return CourseService.deleteCourse(course.id);
+  };
+}

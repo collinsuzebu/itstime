@@ -4,18 +4,19 @@ import initialState from "./reducers/initialState";
 import * as courseActions from "./actions/course";
 
 describe("Courses Store", () => {
-  it("Should start courses as an empty array", () => {
-    // arrange
-    const store = createStore(rootReducer, initialState);
+  let store;
+  beforeEach(() => {
+    store = createStore(rootReducer, initialState);
+  });
 
+  it("Should start courses as an empty array", () => {
     // assert
     const allCourses = store.getState().courses;
-    expect(createdCourses).toHaveLength(0);
+    expect(allCourses).toHaveLength(0);
   });
 
   it("Should handle creating courses", () => {
     // arrange
-    const store = createStore(rootReducer, initialState);
     const course = {
       title: "A",
     };
@@ -41,7 +42,6 @@ describe("Courses Store", () => {
 
   it("Should handle updating courses", () => {
     // arrange
-    const store = createStore(rootReducer, initialState);
     const course = {
       title: "A",
     };
@@ -64,7 +64,6 @@ describe("Courses Store", () => {
 
   it("Should handle deleting courses", () => {
     // arrange
-    const store = createStore(rootReducer, initialState);
     const course = {
       title: "A",
     };
