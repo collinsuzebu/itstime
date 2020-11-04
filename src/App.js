@@ -1,15 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import HomePage from "./components/home/HomePage";
-import Courses from "./components/courses/Courses";
+import CourseDetail from "./components/courses/CourseDetail";
 import PageNotFound from "./components/PageNotFound";
-import CourseManagement from "./components/courses/CourseManagement"; // eslint-disable-line import/no-named-as-default
-import SignUpPage from "./components/login/SignUpPage";
-import LoginPage from "./components/login/LoginPage";
+//import CourseManagement from "./components/courses/CourseManagement"; // eslint-disable-line import/no-named-as-default
+import SignUpPage from "./components/authentication/login/SignUpPage";
+import LoginPage from "./components/authentication/login/LoginPage";
+import ProfilePage from "./components/students/ProfilePage";
+import { history } from "./helpers/history";
+import { useDispatch } from "react-redux";
+import { clearMessage } from "./redux/actions/message";
+
+import MCourses from "./components/courses/MCourses";
 
 const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    history.listen((location) => {
+      dispatch(clearMessage()); // clear message when changing location
+    });
+  }, [dispatch]);
   return (
     <Router>
       <div className="app">
@@ -18,11 +31,11 @@ const App = () => {
             <HomePage />
           </Route>
 
-          <Route path="/courses" component={Courses} />
+          {/* <Route path="/course/:slug" component={CourseManagement} /> */}
 
-          <Route path="/course/:slug" component={CourseManagement} />
+          <Route path="/courses/:slug" component={CourseDetail} />
 
-          <Route path="/course" component={CourseManagement} />
+          <Route path="/courses" component={MCourses} />
 
           <Route path="/knowledge-hub" component={PageNotFound}></Route>
 
@@ -33,6 +46,10 @@ const App = () => {
           <Route path="/register" component={SignUpPage}></Route>
 
           <Route path="/login" component={LoginPage}></Route>
+
+          {/* <PrivateRoute path="/profile" component={ProfilePage} /> */}
+
+          <Route path="/profile" component={ProfilePage} />
 
           <Route component={PageNotFound}></Route>
 

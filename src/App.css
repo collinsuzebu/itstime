@@ -23,7 +23,7 @@ a:focus {
 }
 
 a:hover {
-  color: #7cb342;
+  color: #70a13c;
 }
 
 /*  ----> Buttons */
@@ -54,6 +54,11 @@ input[type="submit"] {
 
 button {
   overflow: visible;
+  outline: none !important;
+}
+
+button > span {
+  /* position: absolute; */
 }
 
 button,
@@ -68,6 +73,10 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: 0;
+}
+
+button:active {
+  background-color: #70a13c;
 }
 
 ul {
@@ -109,4 +118,105 @@ ul {
   /* color: #fff; */
   margin: 0;
   margin-top: 10px;
+}
+
+@keyframes c-inline-spinner-kf {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.c-inline-spinner,
+.c-inline-spinner:before {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  transform-origin: 50%;
+  border: 2px solid transparent;
+  border-color: #fff #fff transparent transparent;
+  border-radius: 50%;
+  content: "";
+  animation: linear c-inline-spinner-kf 900ms infinite;
+  position: relative;
+  vertical-align: inherit;
+  line-height: inherit;
+}
+.c-inline-spinner {
+  top: 3px;
+  margin: 0 10px;
+  float: right;
+}
+.c-inline-spinner:before {
+  border-color: #fff #fff transparent transparent;
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  border-style: solid;
+}
+
+.bootstrap__container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .bootstrap__container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .bootstrap__container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .bootstrap__container {
+    width: 1170px;
+  }
+}
+
+.pr-row {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.pr-row:before,
+.pr-row:after {
+  content: " ";
+  display: table;
+}
+
+.pr-row:after {
+  clear: both;
+}
+
+.pr-container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.pr-container:before,
+.pr-container:after {
+  content: " ";
+  display: table;
+}
+
+.pr-container:after {
+  clear: both;
+}
+
+@media (min-width: 1200px) .pr-container {
+  width: 1200px;
+}
+@media (min-width: 992px) .pr-container {
+  width: 970px;
+}
+@media (min-width: 768px) .pr-container {
+  width: 750px;
 }
