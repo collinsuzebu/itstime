@@ -20,7 +20,7 @@ const CourseList = ({ courses, onDeleteClick }) => (
             <td>
               <a
                 className="btn btn-light"
-                href={"http://pluralsight.com/courses/" + course.slug}
+                href={"http://itstime.com/courses/" + course.slug}
               >
                 Watch
               </a>
@@ -28,8 +28,8 @@ const CourseList = ({ courses, onDeleteClick }) => (
             <td>
               <Link to={"/course/" + course.slug}>{course.title}</Link>
             </td>
-            <td>{course.description}</td>
-            <td>{course.subjectName}</td>
+            <td>{course.overview}</td>
+            <td>{course.subject}</td>
             <td>
               <button
                 className="btn btn-outline-danger"
