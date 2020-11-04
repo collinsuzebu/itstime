@@ -2,14 +2,16 @@
   "name": "default",
   "version": "0.1.0",
   "private": true,
+  "author": "Collins Uz",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
-    "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "fetch-mock": "^9.10.7",
+    "jest": "^24.9.0",
     "json-server": "^0.16.2",
     "npm-run-all": "^4.1.5",
     "react": "^16.13.1",
@@ -23,13 +25,14 @@
     "redux-immutable-state-invariant": "^2.1.0",
     "redux-mock-store": "^1.5.4",
     "redux-thunk": "^2.3.0",
+    "reselect": "^4.0.0",
     "styled-components": "^5.2.0"
   },
   "scripts": {
-    "start": "run-p start:dev start:mockapi",
-    "start:dev": "react-scripts start",
+    "start": "react-scripts start",
+    "start:dev": "run-p react-scripts start start:mockapi",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --watchAll=false",
     "test:ci": "react-scripts test",
     "eject": "react-scripts eject",
     "prestart:mockapi": "node mockapi/createMockDb.js",
@@ -63,9 +66,12 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
+    "jest-environment-jsdom-sixteen": "^1.0.3",
+    "mutationobserver-shim": "^0.3.7",
     "node-fetch": "^2.6.1"
   }
 }
