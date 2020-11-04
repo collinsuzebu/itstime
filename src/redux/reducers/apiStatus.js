@@ -8,14 +8,10 @@ function actionTypeEndsInSuccess(type) {
 export default function (state = initialState.apiCallsInProgress, action) {
   const { type } = action;
 
-  switch (type) {
-    case API_CALL_STARTED:
-      return state + 1;
-
-    case API_CALL_FAILED || actionTypeEndsInSuccess(type):
-      return state - 1;
-
-    default:
-      return state;
+  if (type === API_CALL_STARTED) {
+    return state + 1;
+  } else if (type === API_CALL_FAILED || actionTypeEndsInSuccess(type)) {
+    return state - 1;
   }
+  return state;
 }
