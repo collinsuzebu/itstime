@@ -9,9 +9,8 @@ const getCourses = () => {
 const saveCourse = (course) => {
   return axios.get(API_URL + (course.id || ""), course).then((response) => {
     if (response.data) {
-      console.log(response.data);
+      return response.data;
     }
-    return response.data;
   });
 };
 

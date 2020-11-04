@@ -1,10 +1,10 @@
 import axios from "axios";
 import authHeader from "./auth-header";
 
-const API_URL = process.env.REACT_APP_API_URL + "/info/";
+const API_URL = process.env.REACT_APP_API_URL;
 
 const getUserBoard = () => {
-  return axios.get(API_URL + "user", { headers: authHeader() });
+  return axios.get(API_URL + "/auth/protected/", { headers: authHeader() });
 };
 
 const getModeratorBoard = () => {
