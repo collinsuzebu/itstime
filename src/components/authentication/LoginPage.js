@@ -5,10 +5,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 
-import NavBar from "../../common/nav/NavBar";
-import Footer from "../../common/footer/Footer";
-import { login } from "../../../redux/actions/auth";
-import { validateEmail } from "../../../helpers/validators";
+import NavBar from "../../components/common/nav/NavBar";
+import Footer from "../../components/common/footer/Footer";
+import { login } from "../../redux/actions/auth";
+import { validateEmail } from "../../helpers/validators";
 // import { isLoggedIn, message } from "../../../redux/selectors";
 
 import "./SignUpPage.css";
@@ -23,7 +23,7 @@ function LoginPage({ history }) {
   const [validUser, setValidUser] = useState(true);
 
   // #
-  const { isLoggedIn } = useSelector((state) => state.authB);
+  const { isLoggedIn } = useSelector((state) => state.auth);
   const { message } = useSelector((state) => state.message);
 
   // const isLoggedInSelector = isLoggedIn;

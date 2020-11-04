@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
-import { signup } from "../../../redux/actions/auth";
-import Footer from "../../common/footer/Footer";
-import NavBar from "../../common/nav/NavBar";
-import { validateEmail, validatePassword } from "../../../helpers/validators";
+import { signup } from "../../redux/actions/auth";
+import Footer from "../../components/common/footer/Footer";
+import NavBar from "../../components/common/nav/NavBar";
+import { validateEmail, validatePassword } from "../../helpers/validators";
 
 import "./SignUpPage.css";
 
