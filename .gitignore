@@ -165,7 +165,7 @@ sketch
 # *.png
 
 # mock data
-# mockapi/
+mockapi/
 
 
 # snapshots files
