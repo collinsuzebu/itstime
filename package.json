@@ -71,6 +71,7 @@
     "enzyme-adapter-react-16": "^1.15.5",
     "enzyme-to-json": "^3.6.1",
     "jest-environment-jsdom-sixteen": "^1.0.3",
+    "msw": "^0.21.3",
     "mutationobserver-shim": "^0.3.7",
     "node-fetch": "^2.6.1"
   }
