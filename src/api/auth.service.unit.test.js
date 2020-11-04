@@ -61,10 +61,10 @@ describe("Auth Service", () => {
       );
 
       // Act
-      const serverResponse = await AuthService.login(...loginUser);
+      const data = await AuthService.login(...loginUser);
 
       // Assert
-      expect(serverResponse.data).toEqual({
+      expect(data).toEqual({
         token: { access: "accessKey", refresh: "refreshKey" },
       });
     });
@@ -82,5 +82,9 @@ describe("Auth Service", () => {
         "Network Error"
       );
     });
+  });
+
+  describe("Logout", () => {
+    it.todo("Should successfully remove 'user' data from localStorage");
   });
 });
