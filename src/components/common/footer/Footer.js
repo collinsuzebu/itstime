@@ -7,7 +7,7 @@ function Footer() {
       <div className="footer-secondary">
         <div className="container">
           <div className="row">
-            <div className="column col-md-3 footer-1">
+            <div className="column col-md-3">
               <div className="widgets">
                 <div className="widget widget__contact-info">
                   <div className="footer__logo">

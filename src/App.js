@@ -1,19 +1,19 @@
 import React, { useEffect } from "react";
-import "./App.css";
+import { history } from "./helpers/history";
+import { useDispatch } from "react-redux";
+import { clearMessage } from "./redux/actions/message";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import HomePage from "./components/home/HomePage";
 import CourseDetail from "./components/courses/CourseDetail";
+import MCourses from "./components/courses/MCourses";
+import Blog from "./components/blog/Blog";
 import PageNotFound from "./components/PageNotFound";
 //import CourseManagement from "./components/courses/CourseManagement"; // eslint-disable-line import/no-named-as-default
 import SignUpPage from "./components/authentication/SignUpPage";
 import LoginPage from "./components/authentication/LoginPage";
 import ProfilePage from "./components/students/ProfilePage";
-import { history } from "./helpers/history";
-import { useDispatch } from "react-redux";
-import { clearMessage } from "./redux/actions/message";
-
-import MCourses from "./components/courses/MCourses";
+import "./App.css";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -41,7 +41,7 @@ const App = () => {
 
           <Route path="/about" component={PageNotFound}></Route>
 
-          <Route path="/blog" component={PageNotFound}></Route>
+          <Route path="/blog" component={Blog}></Route>
 
           <Route path="/register" component={SignUpPage}></Route>
 

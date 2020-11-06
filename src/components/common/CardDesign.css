@@ -19,6 +19,7 @@
 
 .card .card__top img {
   height: 220px;
+  background-color: red;
 }
 
 .card .card__bottom {

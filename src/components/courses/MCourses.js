@@ -20,8 +20,6 @@ const Courses = () => {
     }
   }, [courses, dispatch]);
 
-  console.log(courses);
-
   return (
     <>
       <NavBar />
