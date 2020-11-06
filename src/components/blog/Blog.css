@@ -1,0 +1,19 @@
+.blog-home h1 {
+  width: 100%;
+  margin: 45px 0 10px 0;
+}
+
+.featured-posts-container {
+  display: flex;
+}
+
+@media screen and (max-width: 900px) {
+  .blog-home h1 {
+    margin-block-start: 1.5em;
+    margin-block-end: 1.5em;
+  }
+
+  .featured-posts-container {
+    flex-direction: column;
+  }
+}
